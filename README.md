@@ -107,6 +107,13 @@ Run the tests:
 docker run --rm restassured-tests
 ```
 
+Run the tests make test results visible locally, make sure DockerFile has Volume mapped:
+
+```bash
+docker run -v ./test-results:/app/target aeendale/apijavaimage
+```
+
+
 ## Purpose
 
 This is a lightweight sample project for experimenting with:
