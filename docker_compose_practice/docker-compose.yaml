@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "8082:80"
+  alpine:
+    image: alpine
+    entrypoint: "wget http://nginx"
+    depends_on:
+      - nginx
+    working_dir: /app/output
+    volumes:
+      - ./results:/app/output

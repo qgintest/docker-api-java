@@ -1,0 +1,6 @@
+FROM alpine
+RUN apk add openjdk17
+ENV PATH=$PATH:/usr/lib/jvm/java-17-openjdk/bin/javac
+WORKDIR /app
+ADD Calculator.java Calculator.java
+ENTRYPOINT javac Calculator.java && java Calculator "$Number1" "$Number2" "$Operator"
